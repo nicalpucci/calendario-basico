@@ -27,7 +27,7 @@ public class CalendarioBasico {
         if(ano <= 9){
             ceroAno = "0";
         }
-        obtenerFecha = (ceroDia+dia+"-"+ceroMes+mes+"-"+ceroAno+ano);
+        obtenerFecha = (ceroDia + dia + "-" + ceroMes+mes + "-" + ceroAno+ano);
         return obtenerFecha;    
     }
     
@@ -45,33 +45,19 @@ public class CalendarioBasico {
      * metodo para avanzar un dia mas
      */
     public void avanzarFecha(){
-        if(dia <= 29){
-            dia++;
-        }
-        else{
+        dia++;
+        if(dia > 30){
             dia = 1;
-            if(dia == 1){
-                mes++;
-            }
-        }
-        if(mes <= 11){
             mes++;
         }
-        else{
+        if(mes > 12){
             mes = 1;
-            if(mes == 1){
-                ano++;
-            }
-        }
-        if(ano <= 98){
             ano++;
         }
-        else{
+        if(ano > 99){
             ano = 1;
-            if(ano == 1){
-                dia = 1;
-                mes = 1;
-            }
+            dia = 1;
+            mes = 1;
         }
     }
 }
