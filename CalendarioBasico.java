@@ -49,15 +49,15 @@ public class CalendarioBasico {
         if(dia > 30){
             dia = 1;
             mes++;
-        }
-        if(mes > 12){
-            mes = 1;
-            ano++;
-        }
-        if(ano > 99){
-            ano = 1;
-            dia = 1;
-            mes = 1;
-        }
+            if(mes > 12){
+                mes = 1;
+                ano++;
+                if(ano > 99){
+                    ano = 1;
+                    dia = 1;
+                    mes = 1;
+                } 
+            }
+        }        
     }
 }
