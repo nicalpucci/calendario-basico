@@ -9,4 +9,69 @@ public class CalendarioBasico {
         mes = 1;
         ano = 1;
     }
+    
+    /**
+     * metodo getter para obtener la fecha
+     */
+    public String obtenerFecha(){
+        String obtenerFecha;
+        String ceroDia = "";
+        String ceroMes = "";
+        String ceroAno = "";
+        if(dia <= 9){
+            ceroDia = "0";
+        }
+        if(mes <= 9){
+            ceroMes = "0";
+        }
+        if(ano <= 9){
+            ceroAno = "0";
+        }
+        obtenerFecha = (ceroDia+dia+"-"+ceroMes+mes+"-"+ceroAno+ano);
+        return obtenerFecha;    
+    }
+    
+    /**
+     * metodo setter para fijar una fecha
+     */
+    public void fijarFecha(int diaFijado, int mesFijado, int anoFijado){
+        dia = diaFijado;
+        mes = mesFijado;
+        ano = anoFijado;
+        
+    }
+    
+    /**
+     * metodo para avanzar un dia mas
+     */
+    public void avanzarFecha(){
+        if(dia <= 29){
+            dia++;
+        }
+        else{
+            dia = 1;
+            if(dia == 1){
+                mes++;
+            }
+        }
+        if(mes <= 11){
+            mes++;
+        }
+        else{
+            mes = 1;
+            if(mes == 1){
+                ano++;
+            }
+        }
+        if(ano <= 98){
+            ano++;
+        }
+        else{
+            ano = 1;
+            if(ano == 1){
+                dia = 1;
+                mes = 1;
+            }
+        }
+    }
 }
